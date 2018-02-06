@@ -1,0 +1,43 @@
+<h1>*ngFor Demo</h1>
+
+<ul>
+  <li *ngFor="let user of users">
+      Row {{i}} : {{user.name}} - {{user.age}}
+  </li>
+</ul>
+
+<h1>*ngSwitchCase Demo</h1>
+
+<div [ngSwitch]="myDir">
+  <b *ngSwitchCase="dirEnum.East">East Diretion</b>
+  <b *ngSwitchCase="dirEnum.West">West Diretion</b>
+  <b *ngSwitchCase="dirEnum.North">North Direction</b>
+  <b *ngSwitchCase="dirEnum.South">South Direction</b>
+  <b *ngSwitchDefault>No Direction</b>
+</div>  
+
+<h1>*ngIf Demo</h1>
+
+<p *ngIf="isValid">
+  This is a valid data!
+</p>
+
+<p *ngIf="!isValid">
+  This is not valid data!
+</p>
+
+<h1>*ngIf else Demo</h1>
+<p *ngIf="version==4">
+  Angular version is 4
+</p>
+
+<p *ngIf="version==2">
+    Angular version is 2
+</p>
+
+<h1>*ngIf else template Demo</h1>
+<p *ngIf="IsLatestVersion; else notLatest"></p>
+<ng-template #notLatest>
+ Not a latest version
+</ng-template>
+</p>

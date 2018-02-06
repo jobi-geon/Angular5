@@ -1,0 +1,22 @@
+
+<div *ngIf="employee">
+  <h2>Edit Details</h2>
+  <table>
+      <tr>
+          <td><label>ID: </label></td>
+          <td>{{employee.id}}</td>
+      </tr>
+      <tr>
+          <td><label>Name: </label></td>
+          <td><input [(ngModel)]="employee.name" placeholder="name" /></td>
+      </tr>
+      <tr>
+          <td><label>Company: </label></td>
+          <td><input [(ngModel)]="employee.company" placeholder="company" /></td>
+      </tr>
+      <tr>
+          <td><label>Designation: </label></td>
+          <td><input [(ngModel)]="employee.designation" placeholder="designation" /></td>
+      </tr>
+  </table>
+</div>

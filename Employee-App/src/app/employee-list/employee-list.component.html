@@ -1,0 +1,12 @@
+<table class="tftable">
+  <tr><th>ID</th><th>Name</th><th>Company</th><th>Designation</th>
+  <tr *ngFor="let employee of employees"
+      (click)="onSelect(employee)"
+      [class.selected]="employee === selectedEmployee">
+	<td>{{employee.id}}</td> <td>{{employee.name}}</td> <td>{{employee.company}}</td> <td>{{employee.designation}}</td>
+  </tr>
+</table>
+
+<table class="tftable">
+<app-employee-details [employee]="selectedEmployee"></app-employee-details>
+</table>
