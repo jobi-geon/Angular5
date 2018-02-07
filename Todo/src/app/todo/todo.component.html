@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Bootstrap 4 Template</title>
+
+    <!-- Bootstrap -->
+
+
+    
+
+    <style>
+        #tCreateTest {
+            background-color: #C5C9B8;
+            color: #333333;
+            padding: 0 0 2rem;
+        }
+        
+        #submitTitle {
+            align-items: center;
+            justify-content: space-around;
+            display: flex;
+        }
+        .completedcss {
+	     transition: color 0.3s ease-out;
+         text-decoration: line-through;
+        color: black
+        }
+        .ul {
+         display: block;
+         list-style-type: disc;
+         }
+         .checkboxcss{
+             width: 20px;
+             height: 20px; 
+             border-radius: 1px;
+             transition: color 0.3s ease-out;
+             background-color: #2ECC71;
+             outline: 0 none;
+             box-shadow: none;
+         }
+        
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div id="tCreateTest" class="row justify-content-center">
+            <div class="createTestContainer col-sm-8">
+                <h2>TO-DO Application</h2>
+                <div class="form-group-lg">
+                    <div id="testDetails">
+                        <form class="form-group">
+                            <input type="text" class="form-control form-control-lg" id="lgFormGroupInput" placeholder="Enter Activity" [(ngModel)]="str" name="something">
+                        </form>
+                        <button class="btn btn-outline-success" id="submitTitle" (click)="todoDetails()" type="submit">
+                                Submit
+                            </button>
+                    </div>
+                    <br>
+                    <ul class="sub-menu" type="none">
+                        <li *ngFor="let game of sers " [ngClass]="{completedcss:game.checked}">
+                                <a style="font-size:150%;">
+                                        <input type="checkbox" class="checkboxcss" (change)="isSelected(game)"    />{{game.name}}
+                                      </a>
+                            <li>         
+                    </ul>
+                    <div *ngIf="sers.length > 0">
+                        <strong>{{sers.length}}</strong> 
+                        {{sers.length == 1 ? 'thing' : 'things'}} on the list...
+                      </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
