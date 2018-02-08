@@ -1,0 +1,49 @@
+
+<!-- bind data using curly braces to the data in app.component.ts -->
+
+<!-- comment our the data related to single invention we don't need it because 
+    we're using array now  -->
+<!-- 
+<h2> {{ invention.name }} </h2>
+<h3> {{ invention.inventor }} </h3>
+<h3> {{ invention.year }} </h3>
+
+-->
+
+<!-- use *ngFor to iterate through array of inventions and print information about them -->
+
+<li *ngFor="let i of inventions">
+  <span> <b> Name: </b>  {{ i.name }}  || </span>
+  <span>  <b> Inventor: </b>  {{ i.inventor }}  || </span>
+  <span>  <b> Year: </b> {{ i.year }}  </span>
+
+  <button class="btn" (click)="deleteInvention(i.name)"> Delete invention </button>
+</li>
+
+
+
+<!--  add new inventions -->
+
+<hr>
+
+
+<!-- Let the user enter information and display the same side by side -->
+
+
+<div>
+  <input [(ngModel)]="nameModel" placeholder="enter name">
+</div>
+
+<div>
+  <input type="text" [(ngModel)]="inventorModel" placeholder="enter inventor ">
+</div>
+
+<div>
+  <input [(ngModel)]="yearModel" placeholder="year">
+</div>
+
+<br>
+
+<!-- call the createInvention() function from component on click of button -->
+<!-- note the use of parenthesis for the click event -->
+<button class="btn" (click)="createInvention()"> create invention </button>
